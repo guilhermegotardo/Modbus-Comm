@@ -25,12 +25,16 @@ namespace Modbus_Comm
             modbusmanger = new ModbusManager();
             modbusmanger.Serial_Setup.COMPort = ComboBoxSerialComm.SelectedItem.ToString();
             modbusmanger.Serial_Setup.BaudRate = ComboBoxBaudRate.SelectedItem.ToString();
+            modbusmanger.Serial_Setup.Parity = ComboBoxParity.SelectedItem.ToString();
+            modbusmanger.Serial_Setup.DataBits = ComboBoxDataBits.SelectedItem.ToString();
+            modbusmanger.Serial_Setup.StopBit = ComboBoxStopBit.SelectedItem.ToString();
 
         }
 
         private void ButtonConnect_Click(object sender, EventArgs e)
         {
             string a = modbusmanger.Serial_Setup.COMPort;
+            modbusmanger.ConnectToLocalPort();
         }
     }
 }
