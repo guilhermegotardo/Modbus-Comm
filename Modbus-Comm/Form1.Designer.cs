@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ButtonConnect = new System.Windows.Forms.Button();
             this.ComboBoxStopBit = new System.Windows.Forms.ComboBox();
             this.ComboBoxDataBits = new System.Windows.Forms.ComboBox();
             this.ComboBoxParity = new System.Windows.Forms.ComboBox();
@@ -40,6 +41,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.ButtonConnect);
             this.panel1.Controls.Add(this.ComboBoxStopBit);
             this.panel1.Controls.Add(this.ComboBoxDataBits);
             this.panel1.Controls.Add(this.ComboBoxParity);
@@ -50,6 +52,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 355);
             this.panel1.TabIndex = 3;
+            // 
+            // ButtonConnect
+            // 
+            this.ButtonConnect.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonConnect.Location = new System.Drawing.Point(63, 279);
+            this.ButtonConnect.Name = "ButtonConnect";
+            this.ButtonConnect.Size = new System.Drawing.Size(137, 31);
+            this.ButtonConnect.TabIndex = 4;
+            this.ButtonConnect.Text = "Conectar";
+            this.ButtonConnect.UseVisualStyleBackColor = true;
+            this.ButtonConnect.Click += new System.EventHandler(this.ButtonConnect_Click);
             // 
             // ComboBoxStopBit
             // 
@@ -110,7 +123,8 @@
             // 
             // ComboBoxSerialComm
             // 
-            this.ComboBoxSerialComm.FormattingEnabled = true;
+            this.ComboBoxSerialComm.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.ComboBoxSerialComm.IntegralHeight = false;
             this.ComboBoxSerialComm.Items.AddRange(new object[] {
             "COM1",
             "COM2",
@@ -159,6 +173,9 @@
         private System.Windows.Forms.ComboBox ComboBoxBaudRate;
         private System.Windows.Forms.ComboBox ComboBoxSerialComm;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button ButtonConnect;
+
+        ModbusManager modbusmanger;
     }
 }
 
